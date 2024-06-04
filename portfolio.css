@@ -2,16 +2,15 @@
 html {
 	background-image: url("images/Blue Fire.png");
 	min-height: 100%;
-	background-position: center bottom;
+	background-position: center top;
   	background-repeat: no-repeat;
-  	background-size: 100% auto;
+  	background-size: contain;
 
 }
 body  {
 	font-family: Arial, sans-serif;
 	width: 80%;
 	min-height: 100%;
-	background-color: rgb(0, 0, 0);
 	border: 3px solid black;
 	margin: 0 auto;
 	box-shadow: 9px 18px 10px; /*horizontalOffset verticalOffset blurRadius */
@@ -36,7 +35,6 @@ header h2 {
 
 #main_nav a {
 	color:lightskyblue;
-	background-color: black;
 	text-align: center;
 	padding: .5em 1em;
 	text-decoration: none;
