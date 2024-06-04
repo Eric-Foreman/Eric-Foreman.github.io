@@ -2,9 +2,9 @@
 html {
 	background-image: url("images/Blue Fire.png");
 	min-height: 100%;
-	background-position: center top;
+	background-position: center bottom;
   	background-repeat: no-repeat;
-  	background-size: contain;
+  	background-size: 100% auto;
 
 }
 body  {
@@ -20,6 +20,7 @@ header {
 	border-bottom: .2em solid rgb(8, 79, 130);
     color: white;
     text-align: center;
+	padding-top: 20%;
 	
 }
 header img {
