@@ -19,19 +19,20 @@ body {
 }
 
 /* Styles for the game board */
-#game-board {
+#game-board {   
     display: grid;
     gap: 2px;
     background-color: #444;
     padding: 2px;
-    max-width: 320px;
+    max-width: 60%;
+    max-height: 60%;
 }
 
 .cell {
     width: 30px;
     height: 30px;
     background-color: #bbb;
-    border: 1px solid #999;
+    border: 2px solid #999;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -18,16 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
         Expert: { boardSize: 30, mineCount: 150 },
     };
 
+    let selectedDifficulty = 'Easy'; // Default difficulty
+
     function setDifficulty(level) {
-        const settings = difficultySettings[level];
-        boardSize = settings.boardSize;
-        mineCount = settings.mineCount;
+        selectedDifficulty = level;
         difficultySelected.textContent = level;
-        mineCountValue.textContent = mineCount;
     }
 
     // Initialize the game
     function initGame() {
+        const settings = difficultySettings[selectedDifficulty];
+        boardSize = settings.boardSize;
+        mineCount = settings.mineCount;
         timer = 0;
         timerValue.textContent = timer;
         mineCountValue.textContent = mineCount;
