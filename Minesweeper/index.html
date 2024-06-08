@@ -9,12 +9,22 @@
 	<link rel="stylesheet" href="minesweeper.css">
 	
 </head>
+<header>
+	<div id="difficulty"></div>
+		<span id="difficulty">Difficulty Selected: <span id="difficulty-selected">Easy</span></span>
+		<button id="Easy-btn">Easy</button>
+		<button id="Medium-btn">Medium</button>
+		<button id="Hard-btn">Hard</button>
+		<button id="Expert-btn">Expert</button>
+	</div>
+	<div id="start-game"><button id="Start-btn">Start Game</button>/div>
+</header>
 
 <body>
     <div id="game-board"></div>
     <div id="game-info">
-        <span id="timer">Timer: 0s</span>
-        <span id="mine-count">Mines: 10</span>
+        <span id="timer">Timer: <span id="timer-value">0</span>s</span>
+        <span id="mine-count">Mines: <span id="mine-count-value">10</span></span>
         <button id="restart-btn">Restart</button>
     </div>
     <script src="minesweeper.js"></script>
