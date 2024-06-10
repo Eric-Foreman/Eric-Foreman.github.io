@@ -73,4 +73,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Restart game when the restart button is clicked
     restartBtn.addEventListener('click', initGame);
+
+    // Flag grid cells on click
+    
+    function handleFlagtClick(event) {
+        event.preventDefault(); // Prevent the context menu from appearing
+        const cell = event.target;
+        if (!cell.classList.contains('revealed')) {
+            cell.classList.toggle('flagged');
+        }
+    }
+
+    // Clear grid cells on click
+    function handleCellClick(event) {
+        const cell = event.target;
+        // Add logic to reveal the cell
+        if (!cell.classList.contains('flagged')) {
+            cell.classList.add('revealed');
+            // Logic to check if the cell is a mine or how many mines are around it
+        }
+    }
+
+
 });
