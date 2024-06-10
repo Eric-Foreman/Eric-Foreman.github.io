@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const gameBoard = document.getElementById('game-board');
     const timerValue = document.getElementById('timer-value');
     const mineCountValue = document.getElementById('mine-count-value');
-    const restartBtn = document.getElementById('restart-btn');
     const startBtn = document.getElementById('Start-btn');
 
     let numRows = 9;
@@ -71,8 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize game on start button click
     startBtn.addEventListener('click', initGame);
 
-    // Restart game when the restart button is clicked
-    restartBtn.addEventListener('click', initGame);
 
     // Flag grid cells on click
     
