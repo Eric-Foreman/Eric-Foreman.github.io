@@ -11,14 +11,14 @@ body {
 }
 
 header {
-    padding-bottom: 10 px;
+    margin: 10 px;
 }
 
 #game-info {
     margin-top: 20px;
 }
 
-#timer, #mine-count {
+#timer, #mine-count {   
     margin: 0 10px;
 }
 
@@ -28,8 +28,9 @@ header {
     gap: 2px;
     background-color: #444;
     padding: 2px;
-    max-width: 600px;
+    max-width: 1000px;
     max-height: 600px;
+    align-items: center;
 }
 
 .cell {
