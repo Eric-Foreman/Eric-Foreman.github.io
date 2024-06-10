@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartBtn = document.getElementById('restart-btn');
     const startBtn = document.getElementById('Start-btn');
 
-    let boardSize = 10;
+    let numRows = 9;
+    let numCols = 9;
     let mineCount = 10;
     let timer = 0;
     let timerInterval;
 
     const difficultySettings = {
-        Easy: { boardSize: 10, mineCount: 10 },
-        Medium: { boardSize: 16, mineCount: 40 },
-        Hard: { boardSize: 22, mineCount: 99 },
-        Expert: { boardSize: 30, mineCount: 150 },
+        Easy: { numRows: 9, numCols: 9, mineCount: 10 },
+        Medium: { numRows: 16, numCols: 16, mineCount: 40 },
+        Hard: { numRows: 16, numCols: 30, mineCount: 99 },
     };
 
     let selectedDifficulty = 'Easy'; // Default difficulty
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize the game
     function initGame() {
         const settings = difficultySettings[selectedDifficulty];
-        boardSize = settings.boardSize;
+        numRows = settings.numRows;
+        numCols = settings.numCols;
         mineCount = settings.mineCount;
         timer = 0;
         timerValue.textContent = timer;
@@ -38,12 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
         gameBoard.innerHTML = '';
 
         // Set the game board grid template
-        gameBoard.style.gridTemplateColumns = `repeat(${boardSize}, 1fr)`;
-        gameBoard.style.gridTemplateRows = `repeat(${boardSize}, 1fr)`;
+        gameBoard.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+        gameBoard.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
 
         // Generate the grid cells
-        for (let row = 0; row < boardSize; row++) {
-            for (let col = 0; col < boardSize; col++) {
+        for (let row = 0; row < numRows; row++) {
+            for (let col = 0; col < numCols; col++) {
                 const cell = document.createElement('div');
                 cell.classList.add('cell');
                 cell.dataset.row = row;
@@ -66,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('Easy-btn').addEventListener('click', () => setDifficulty('Easy'));
     document.getElementById('Medium-btn').addEventListener('click', () => setDifficulty('Medium'));
     document.getElementById('Hard-btn').addEventListener('click', () => setDifficulty('Hard'));
-    document.getElementById('Expert-btn').addEventListener('click', () => setDifficulty('Expert'));
 
     // Initialize game on start button click
     startBtn.addEventListener('click', initGame);
