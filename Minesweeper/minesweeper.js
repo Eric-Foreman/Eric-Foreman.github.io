@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const gameBoard = document.getElementById('game-board');
     const timerValue = document.getElementById('timer-value');
     const mineCountValue = document.getElementById('mine-count-value');
-    const startBtn = document.getElementById('Start-btn');
+    const startBtn = document.getElementById('start-btn');
 
     let numRows = 9;
     let numCols = 9;
@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 cell.classList.add('cell');
                 cell.dataset.row = row;
                 cell.dataset.col = col;
+                cell.addEventListener('click', handleCellClick);
+                cell.addEventListener('contextmenu', handleFlagClick);
                 gameBoard.appendChild(cell);
             }
         }
