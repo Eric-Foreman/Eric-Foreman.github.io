@@ -168,12 +168,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (mines.some(mine => mine.row === row && mine.col === col)) {
             cell.classList.add('mine');
-            cell.style.backgroundImage = `url(../images/Minesweeper Mine (Correct).png)`;
+            cell.style.backgroundImage = "url('./images/Minesweeper Mine (Correct).png')";
             alert("Game Over!");
         } else {
             const mineCount = countNearbyMines(row, col);
             cell.textContent = mineCount > 0 ? mineCount : '';
-            cell.style.backgroundImage = mineCount > 0 ? `url('../images/Minesweeper ${mineCount}.png')` : '';
+            cell.style.backgroundImage = mineCount > 0 ? `url('./images/Minesweeper ${mineCount}.png')` : '';
             if (mineCount === 0) {
                 // Reveal surrounding cells if there are no nearby mines
                 const directions = [
