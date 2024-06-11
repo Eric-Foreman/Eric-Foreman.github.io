@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let firstClick = true;
     let mines = [];
     let cells = [];
+    let gameOver = false; // Add a game over flag
 
     // Difficulty functions
 
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         firstClick = true;
         mines = [];
         cells = [];
+        gameOver = false; // Reset the game over flag
 
         // Clear the game board
         gameBoard.innerHTML = '';
@@ -86,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Flag grid cells on click
     function handleFlagClick(event) {
+        if (gameOver) return; // Prevent flagging if the game is over
         event.preventDefault(); // Prevent the context menu from appearing
         const cell = event.target;
         if (!cell.classList.contains('revealed')) {
@@ -95,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clear grid cells on click
     function handleCellClick(event) {
+        if (gameOver) return; // Prevent flagging if the game is over
         const cell = event.target;
         const row = parseInt(cell.dataset.row);
         const col = parseInt(cell.dataset.col);
@@ -108,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
             cell.classList.add('revealed');
             // Logic to check if the cell is a mine or how many mines are around it
             if (mines.some(mine => mine.row === row && mine.col === col)) {
+                gameOver = true; // Set game over flag
+                timer = timerInterval
+                clearInterval(timerInterval); // Stop the timer
                 cell.classList.add('mine');
                 alert("Game Over!");
             } else {
@@ -161,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (mines.some(mine => mine.row === row && mine.col === col)) {
             cell.classList.add('mine');
-            cell.style.backgroundImage = `url('../images/Minesweeper Mine (Correct).png')`;
+            cell.style.backgroundImage = `url(../images/Minesweeper Mine (Correct).png)`;
             alert("Game Over!");
         } else {
             const mineCount = countNearbyMines(row, col);
