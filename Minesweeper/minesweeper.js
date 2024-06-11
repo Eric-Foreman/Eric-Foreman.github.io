@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cell.classList.add('cell');
                 cell.dataset.row = row;
                 cell.dataset.col = col;
+
                 cell.addEventListener('click', handleCellClick);
                 cell.addEventListener('contextmenu', handleFlagClick);
                 gameBoard.appendChild(cell);
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Flag grid cells on click
-    function handleFlagtClick(event) {
+    function handleFlagClick(event) {
         event.preventDefault(); // Prevent the context menu from appearing
         const cell = event.target;
         if (!cell.classList.contains('revealed')) {
