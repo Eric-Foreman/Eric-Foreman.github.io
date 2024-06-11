@@ -62,6 +62,10 @@ footer {
     background-color: #ddd;
 }
 
+.cell.mine {
+    background-image: url('./images/Minesweeper Mine (Correct).png');
+}
+
 .cell.flagged {
-    background-image: url("../images/Minesweeper Flag.png");
+    background-image: url('./images/Minesweeper Flag.png');
 }

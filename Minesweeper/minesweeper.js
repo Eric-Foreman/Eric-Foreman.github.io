@@ -92,8 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault(); // Prevent the context menu from appearing
         const cell = event.target;
         if (!cell.classList.contains('revealed')) {
-            cell.classList.toggle('flagged');
+            if (cell.classList.contains('flagged')) {
+                mineCountValue.textContent += 1;
+                cell.classList.toggle('flagged');
+            }
+            else {
+                mineCountValue.textContent -= 1;
+                cell.classList.toggle('flagged');
+            }
+            
         }
+        
     }
 
     // Clear grid cells on click
