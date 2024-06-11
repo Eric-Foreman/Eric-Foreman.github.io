@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Connect to html
     const difficultySelected = document.getElementById('difficulty-selected');
     const gameBoard = document.getElementById('game-board');
     const timerValue = document.getElementById('timer-value');
     const mineCountValue = document.getElementById('mine-count-value');
     const startBtn = document.getElementById('start-btn');
 
+    // Declare Variables
     let numRows = 9;
     let numCols = 9;
     let mineCount = 10;
     let timer = 0;
     let timerInterval;
+
+    // Difficulty functions
 
     const difficultySettings = {
         Easy: { numRows: 9, numCols: 9, mineCount: 10 },
@@ -23,6 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedDifficulty = level;
         difficultySelected.textContent = level;
     }
+
+    document.getElementById('Easy-btn').addEventListener('click', () => setDifficulty('Easy'));
+    document.getElementById('Medium-btn').addEventListener('click', () => setDifficulty('Medium'));
+    document.getElementById('Hard-btn').addEventListener('click', () => setDifficulty('Hard'));
+    
+        
+    // Initialize game on start button click
+    startBtn.addEventListener('click', initGame);
 
     // Initialize the game
     function initGame() {
@@ -64,17 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
-    // Set difficulty on button click
-    document.getElementById('Easy-btn').addEventListener('click', () => setDifficulty('Easy'));
-    document.getElementById('Medium-btn').addEventListener('click', () => setDifficulty('Medium'));
-    document.getElementById('Hard-btn').addEventListener('click', () => setDifficulty('Hard'));
-
-    // Initialize game on start button click
-    startBtn.addEventListener('click', initGame);
-
-
     // Flag grid cells on click
-    
     function handleFlagtClick(event) {
         event.preventDefault(); // Prevent the context menu from appearing
         const cell = event.target;
