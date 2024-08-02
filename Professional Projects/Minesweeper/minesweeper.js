@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cell.classList.toggle('flagged');
             }
             else {
-                mineCountValue.textContent -= 1;
+                mineCountValue.textContent = mineCountValue.textContent -1;
                 cell.classList.toggle('flagged');
             }
             
