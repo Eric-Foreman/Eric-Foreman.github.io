@@ -27,6 +27,7 @@ header h2 {
 	font-size: 2.3em;
 	text-indent: 1.5em;
 	margin: 0;
+	color: black;
 }
 
 #main_nav a {
@@ -77,7 +78,7 @@ main {
 }
 
 main h1, h2, h3, th, td {
-	color: white;
+	color: black;
 	margin: 1em;
     padding: 1em;
 }
