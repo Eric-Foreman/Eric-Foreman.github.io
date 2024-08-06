@@ -1,4 +1,4 @@
-/*Eric Foreman*/
+/* Eric Foreman */
 html {
     min-height: 100%;
     background-position: center top;
@@ -13,7 +13,7 @@ body {
     margin: 0 auto;
 }
 
-header {    
+header {
     background-color: #333;
     color: white;
     width: 100%;
@@ -21,9 +21,12 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 #main_nav {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,6 +39,7 @@ header {
     padding: 0;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 #main_nav ul li {
@@ -44,6 +48,12 @@ header {
 
 #main_nav ul li.logo {
     margin-right: auto;
+}
+
+#main_nav .nav-items {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
 #main_nav ul li a {
