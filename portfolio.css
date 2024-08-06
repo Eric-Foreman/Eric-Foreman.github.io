@@ -122,6 +122,19 @@ footer {
     margin-top: 2em;
 }
 
+figure {
+	border: 1px #cccccc solid;
+	padding: 4px;
+	margin: auto;
+  }
+  
+  figcaption {
+	background-color: black;
+	color: white;
+	font-style: italic;
+	padding: 2px;
+	text-align: center;
+  }
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #main_nav ul {
