@@ -137,7 +137,6 @@ footer {
 }
 
 .image-container img {
-    max-width: 375px;
     max-height: 450px;
     width: 100%;
     height: auto;
