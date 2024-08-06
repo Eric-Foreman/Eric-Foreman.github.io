@@ -137,7 +137,7 @@ footer {
 }
 
 .image-container img {
-    max-width: 450px;
+    max-width: 250px;
     max-height: 450px;
     width: 100%;
     height: auto;
@@ -151,8 +151,7 @@ figure {
   }
   
   figcaption {
-	background-color: black;
-	color: white;
+	color: black;
 	font-style: italic;
 	padding: 2px;
 	text-align: center;
