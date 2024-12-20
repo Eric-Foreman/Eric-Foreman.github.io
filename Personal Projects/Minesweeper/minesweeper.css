@@ -100,9 +100,8 @@ img{
 }
 
 main {
-    margin-top: 4em; /* Adjust this if the header height changes */
-    padding: 1.5em 2.5em 2.5em;
-    min-height: 650px;
+    margin-top: 5em; /* Adjust this if the header height changes */
+    /*min-height: 650px;*/
 }
 
 main h1, h2, h3, th, td {
@@ -187,6 +186,7 @@ figure {
     max-width: 1200px;
     max-height: 600px;
     align-items: center;
+    margin: auto
 }
 
 .cell {
